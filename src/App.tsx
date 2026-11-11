@@ -1,13 +1,14 @@
 import './App.css'
 import { AppSidebar } from './components/Sidebar/AppSidebar'
+import { SidebarProvider } from './components/ui/sidebar'
 
 function App() {
 
   return (
     <>
-    <AppSidebar>
-      
-    </AppSidebar>
+    <SidebarProvider>
+      <AppSidebar/>
+    </SidebarProvider>
     </>
   )
 }
