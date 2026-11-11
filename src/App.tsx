@@ -1,14 +1,17 @@
 import './App.css'
 import { AppSidebar } from './components/Sidebar/AppSidebar'
-import { SidebarProvider } from './components/ui/sidebar'
+import { SidebarInset, SidebarProvider, SidebarTrigger } from './components/ui/sidebar'
 
 function App() {
 
   return (
     <>
-    <SidebarProvider>
-      <AppSidebar/>
-    </SidebarProvider>
+      <SidebarProvider style={{ "--sidebar-width-icon": "4rem" } as React.CSSProperties}>
+        <AppSidebar />
+        <SidebarInset>
+          <SidebarTrigger />
+        </SidebarInset>
+      </SidebarProvider>
     </>
   )
 }
