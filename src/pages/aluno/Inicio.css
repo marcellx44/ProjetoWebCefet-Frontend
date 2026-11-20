@@ -1,0 +1,252 @@
+.inicio-topbar {
+  display: flex;
+  min-height: 50px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 24px;
+  border-bottom: 1px solid #dce3ec;
+  background: #fff;
+}
+
+.inicio-topbar__caminho {
+  color: #64748b;
+  font-family: 'JetBrains Mono Variable', monospace;
+  font-size: 11px;
+}
+
+.inicio-topbar__perfil {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #0f1b2a;
+  font-size: 12px;
+}
+
+.inicio-topbar__avatar {
+  border-radius: 5px;
+  background: #99cfff;
+  color: #0d2a42;
+}
+
+.inicio-topbar__perfil strong,
+.inicio-topbar__perfil span {
+  display: block;
+}
+
+.inicio-topbar__perfil span {
+  margin-top: 2px;
+  color: #64748b;
+  font-size: 11px;
+}
+
+.inicio-conteudo {
+  padding: 28px 24px;
+}
+
+.inicio-header__local {
+  margin: 0 0 5px;
+  color: #64748b;
+  font-family: 'JetBrains Mono Variable', monospace;
+  font-size: 10px;
+  letter-spacing: 0.04em;
+}
+
+.inicio-header__titulo {
+  margin: 0;
+  color: #111827;
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.inicio-header__descricao {
+  margin: 6px 0 0;
+  color: #64748b;
+  font-size: 13px;
+}
+
+.inicio-separador {
+  margin-top: 20px;
+}
+
+.resumo-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin: 18px 0;
+}
+
+.inicio-colunas {
+  display: grid;
+  grid-template-columns: minmax(0, 1.8fr) minmax(240px, 0.9fr);
+  align-items: start;
+  gap: 16px;
+}
+
+.cursos-secao__cabecalho {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.cursos-secao__cabecalho h2 {
+  margin: 0;
+  color: #0f1b2a;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.cursos-secao__cabecalho > span {
+  color: #64748b;
+  font-family: 'JetBrains Mono Variable', monospace;
+  font-size: 9px;
+}
+
+.cursos-lista {
+  display: grid;
+  gap: 10px;
+}
+
+.curso-card {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border: 1px solid #dce3ec;
+  border-radius: 6px;
+  background: #fff;
+}
+
+.curso-card__icone {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  place-items: center;
+  border-radius: 5px;
+  background: #0d2a42;
+  color: white;
+  font-family: 'JetBrains Mono Variable', monospace;
+  font-size: 11px;
+}
+
+.curso-card__detalhes {
+  flex: 1;
+  min-width: 0;
+}
+
+.curso-card__titulo-linha,
+.curso-card__progresso-linha {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.curso-card__titulo-linha h3 {
+  overflow: hidden;
+  margin: 0;
+  color: #0f1b2a;
+  font-size: 12px;
+  font-weight: 500;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.curso-card__status {
+  flex: 0 0 auto;
+  padding: 2px 6px;
+  border-radius: 3px;
+  background: #dcf5e7;
+  color: #1e8e4e;
+  font-family: 'JetBrains Mono Variable', monospace;
+  font-size: 8px;
+}
+
+.curso-card__progresso-linha {
+  margin-top: 8px;
+}
+
+.curso-card__progresso {
+  height: 4px;
+  flex: 1;
+  overflow: hidden;
+  border-radius: 99px;
+  background: #edf1f6;
+}
+
+.curso-card__progresso span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: #589edb;
+}
+
+.curso-card__porcentagem {
+  color: #64748b;
+  font-family: 'JetBrains Mono Variable', monospace;
+  font-size: 9px;
+}
+
+.curso-card__botao {
+  min-width: 0;
+  height: 32px;
+  gap: 6px;
+  padding: 0 10px;
+  border-radius: 4px;
+  background: #19377f;
+  font-size: 11px;
+}
+
+.avaliacoes-secao {
+  padding: 16px;
+  border: 1px solid #dce3ec;
+  border-radius: 6px;
+  background: #fff;
+}
+
+.avaliacoes-secao h2 {
+  margin: 0 0 12px;
+  color: #526783;
+  font-family: 'JetBrains Mono Variable', monospace;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.avaliacoes-secao p {
+  margin: 0;
+  color: #64748b;
+  font-size: 12px;
+}
+
+@media (max-width: 850px) {
+  .resumo-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .inicio-colunas {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .inicio-conteudo {
+    padding: 20px 14px;
+  }
+
+  .inicio-topbar {
+    padding-inline: 14px;
+  }
+
+  .curso-card {
+    flex-wrap: wrap;
+  }
+
+  .curso-card__botao {
+    margin-left: auto;
+  }
+}

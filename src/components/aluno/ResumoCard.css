@@ -30,6 +30,11 @@
   font-size: 16px;
 }
 
+.resumo-card__icone svg {
+  width: 16px;
+  height: 16px;
+}
+
 .resumo-card__conteudo {
   min-width: 0;
 }
