@@ -24,13 +24,13 @@ export const menuAluno = [
                 id: 1,
                 nome: "Início",
                 icone: House,
-                url: "/",
+                url: "/aluno/inicio",
             },
             {
                 id: 2,
                 nome: "Catálogo",
                 icone: Search,
-                url: "/catalogo",
+                url: "/aluno/catalogo",
             },
             {
                 id: 3,

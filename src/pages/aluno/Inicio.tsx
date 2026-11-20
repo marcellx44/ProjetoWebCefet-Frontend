@@ -47,7 +47,7 @@ function Inicio() {
 
             <section className="resumo-cards" aria-label="Resumo do aluno">
               <ResumoCard titulo="Matrículas ativas" valor={2} icone={<GraduationCap />} />
-              <ResumoCard titulo="Cursos concluídos" valor={1} icone={<CircleCheck />} />
+              <ResumoCard titulo="Cursos concluídos" valor={1} icone={< CircleCheck />} />
               <ResumoCard titulo="Certificados" valor={1} icone={<Award />} />
             </section>
 

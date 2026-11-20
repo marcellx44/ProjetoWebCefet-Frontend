@@ -1,0 +1,324 @@
+.catalogo-pagina {
+  min-height: 100vh;
+}
+
+.catalogo-topbar {
+  display: flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 7px 22px;
+  border-bottom: 1px solid #dce3ec;
+  background: #fff;
+  color: #64748b;
+  font-family: 'JetBrains Mono Variable', monospace;
+  font-size: 10px;
+}
+
+.catalogo-perfil {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #0f1b2a;
+  font-family: 'Geist Variable', sans-serif;
+  font-size: 11px;
+}
+
+.catalogo-perfil__avatar {
+  border-radius: 5px;
+  background: #99cfff;
+  color: #0d2a42;
+}
+
+.catalogo-perfil strong,
+.catalogo-perfil span {
+  display: block;
+}
+
+.catalogo-perfil span {
+  margin-top: 2px;
+  color: #64748b;
+}
+
+.catalogo-conteudo {
+  padding: 20px 22px 28px;
+}
+
+.catalogo-cabecalho > p {
+  margin: 0 0 5px;
+  color: #64748b;
+  font-family: 'JetBrains Mono Variable', monospace;
+  font-size: 9px;
+  letter-spacing: 0.04em;
+}
+
+.catalogo-cabecalho h1 {
+  margin: 0;
+  color: #111827;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.catalogo-cabecalho > span {
+  display: block;
+  margin-top: 5px;
+  color: #64748b;
+  font-size: 11px;
+}
+
+.catalogo-separador {
+  margin: 18px 0 16px;
+}
+
+.catalogo-filtros {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto;
+  gap: 6px;
+  padding: 7px;
+  border: 1px solid #dce3ec;
+  border-radius: 6px 6px 0 0;
+  background: #fff;
+}
+
+.catalogo-filtros__campo {
+  min-width: 0;
+}
+
+.catalogo-filtros select {
+  width: 100%;
+  height: 32px;
+  padding: 0 11px;
+  border: 1px solid #cbd5e1;
+  border-radius: 5px;
+  background: #fff;
+  color: #0f1b2a;
+  font: inherit;
+  font-size: 10px;
+}
+
+.catalogo-filtros select:focus-visible {
+  outline: 2px solid #589edb;
+  outline-offset: 1px;
+}
+
+.catalogo-filtros__botao {
+  height: 32px;
+  border-radius: 5px;
+  font-size: 10px;
+}
+
+.catalogo-endpoint {
+  display: flex;
+  grid-column: 1 / -1;
+  min-width: 0;
+  align-items: center;
+  gap: 8px;
+  margin: 0 -7px -7px;
+  padding: 6px 10px;
+  border-top: 1px solid #dce3ec;
+  border-radius: 0 0 5px 5px;
+  background: #edf1f6;
+}
+
+.catalogo-endpoint__metodo {
+  flex: 0 0 auto;
+  padding: 2px 6px;
+  border-radius: 3px;
+  background: #0d2a42;
+  color: #fff;
+  font-family: 'JetBrains Mono Variable', monospace;
+  font-size: 8px;
+}
+
+.catalogo-endpoint code {
+  overflow: hidden;
+  color: #64748b;
+  font-family: 'JetBrains Mono Variable', monospace;
+  font-size: 9px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.catalogo-grade {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.catalogo-curso {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #dce3ec;
+  border-radius: 6px;
+  background: #fff;
+}
+
+.catalogo-curso__arte {
+  position: relative;
+  display: flex;
+  min-height: 102px;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  padding: 11px;
+  background-color: #0d2a42;
+  background-image: linear-gradient(rgb(88 158 219 / 10%) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(88 158 219 / 10%) 1px, transparent 1px);
+  background-size: 16px 16px;
+  color: #fff;
+}
+
+.catalogo-curso__caminho {
+  position: relative;
+  z-index: 1;
+  color: #99cfff;
+  font-family: 'JetBrains Mono Variable', monospace;
+  font-size: 9px;
+}
+
+.catalogo-curso__icone {
+  position: absolute;
+  right: 12px;
+  bottom: 10px;
+  width: 28px;
+  height: 28px;
+  color: #99cfff;
+  opacity: 0.75;
+}
+
+.catalogo-curso__arte strong {
+  position: relative;
+  z-index: 1;
+  font-family: 'JetBrains Mono Variable', monospace;
+  font-size: 22px;
+  line-height: 1;
+}
+
+.catalogo-curso__arte i {
+  margin-left: 2px;
+  color: #f5a524;
+  font-style: normal;
+}
+
+.catalogo-curso__corpo {
+  padding: 11px 12px 8px;
+}
+
+.catalogo-curso__etiquetas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.catalogo-curso__etiquetas span {
+  padding: 3px 6px;
+  border: 1px solid #dce3ec;
+  border-radius: 3px;
+  color: #64748b;
+  font-family: 'JetBrains Mono Variable', monospace;
+  font-size: 8px;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.catalogo-curso__etiquetas span:first-child {
+  border-color: transparent;
+  background: #cce7ff;
+  color: #003e76;
+}
+
+.catalogo-curso__corpo h2 {
+  overflow: hidden;
+  margin: 11px 0 7px;
+  color: #0f1b2a;
+  font-size: 12px;
+  font-weight: 500;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.catalogo-curso__corpo > p {
+  min-height: 36px;
+  margin: 0;
+  color: #64748b;
+  font-size: 10px;
+  line-height: 1.45;
+}
+
+.catalogo-curso__separador {
+  margin: 8px 0 3px;
+}
+
+.catalogo-curso__link {
+  display: flex;
+  height: 27px;
+  justify-content: flex-end;
+  padding: 0 4px;
+  color: #003e76;
+  font-size: 9px;
+  text-decoration: none;
+}
+
+.catalogo-curso__link:hover {
+  text-decoration: underline;
+}
+
+.catalogo-vazio {
+  margin: 28px 0;
+  color: #64748b;
+  font-size: 13px;
+  text-align: center;
+}
+
+.catalogo-paginacao {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 16px;
+  color: #64748b;
+  font-family: 'JetBrains Mono Variable', monospace;
+  font-size: 9px;
+}
+
+.catalogo-paginacao > div {
+  display: flex;
+  gap: 6px;
+}
+
+.catalogo-paginacao button {
+  height: 28px;
+  border-radius: 5px;
+  font-family: 'Geist Variable', sans-serif;
+  font-size: 10px;
+}
+
+@media (max-width: 1050px) {
+  .catalogo-grade {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 680px) {
+  .catalogo-conteudo {
+    padding: 18px 14px 24px;
+  }
+
+  .catalogo-topbar {
+    padding-inline: 14px;
+  }
+
+  .catalogo-filtros {
+    grid-template-columns: 1fr;
+  }
+
+  .catalogo-endpoint {
+    grid-column: 1;
+  }
+
+  .catalogo-grade {
+    grid-template-columns: 1fr;
+  }
+}

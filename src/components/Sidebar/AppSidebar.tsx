@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/sidebar"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { LogOut } from "lucide-react"
+import { NavLink, useLocation } from "react-router"
 import logo from '@/assets/Logo.png'
 import { menuPorPerfil, nomeDoPerfil, type Perfil } from "./sidebarItems"
 
@@ -21,6 +22,7 @@ type AppSidebarProps = {
 
 export const AppSidebar = ({ perfil = "aluno" }: AppSidebarProps) => {
   const grupos = menuPorPerfil[perfil]
+  const { pathname } = useLocation()
 
   return (
     <Sidebar collapsible="icon" className="px-4 py-6 bg-sidebar group-data-[collapsible=icon]:px-2">
@@ -43,6 +45,10 @@ export const AppSidebar = ({ perfil = "aluno" }: AppSidebarProps) => {
                 {grupo.itens.map((item) => (
                   <SidebarMenuItem key={item.id}>
                     <SidebarMenuButton
+                      render={<NavLink to={item.url} />}
+                      isActive={pathname === item.url || (
+                        item.url === '/aluno/catalogo' && pathname.startsWith('/aluno/cursos/')
+                      )}
                       tooltip={item.nome}
                       className="h-10 gap-3 px-3 text-body-md text-chart-3 [&_svg]:size-5 hover:[&_svg]:text-highlight data-active:[&_svg]:text-highlight group-data-[collapsible=icon]:p-1.5!"
                     >
