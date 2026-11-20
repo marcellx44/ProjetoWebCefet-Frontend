@@ -1,0 +1,61 @@
+.resumo-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin: 28px 0 20px;
+}
+
+.resumo-card {
+  display: flex;
+  min-width: 0;
+  min-height: 60px;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border: 1px solid #dce3ec;
+  border-radius: 6px;
+  background: #fff;
+  color: #0f1b2a;
+}
+
+.resumo-card__icone {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  flex: 0 0 30px;
+  place-items: center;
+  border-radius: 5px;
+  background: #cce7ff;
+  color: #003e76;
+  font-size: 16px;
+}
+
+.resumo-card__conteudo {
+  min-width: 0;
+}
+
+.resumo-card__titulo {
+  margin: 0 0 2px;
+  color: #526783;
+  font-family: 'JetBrains Mono Variable', monospace;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.resumo-card__valor {
+  display: block;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+@media (max-width: 760px) {
+  .resumo-cards {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-top: 20px;
+  }
+}
