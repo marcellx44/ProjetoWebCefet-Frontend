@@ -2,6 +2,7 @@ import { Navbar } from "@/components/Navbar/Navbar"
 import { Button } from "@/components/ui/button"
 import Footer from "@/components/ui/footer";
 import { House } from 'lucide-react';
+import { Link } from "react-router";
 
 export const NotFound = () => {
     return (
@@ -15,7 +16,7 @@ export const NotFound = () => {
                     </div>
                     <p className="text-primary-foreground text-3xl font-semibold">Página não encontrada</p>
                     <p className="text-chart-3 text-sm">a rota acessada não existe na aplicação</p>
-                    <Button className="bg-highlight text-highlight-foreground hover:bg-highlight-hover gap-2">
+                    <Button className="bg-highlight text-highlight-foreground hover:bg-highlight-hover gap-2" render={<Link to={'/'}/>}>
                         <House />
                         <p>Voltar ao início</p>
                     </Button>
