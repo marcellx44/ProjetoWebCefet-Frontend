@@ -6,6 +6,13 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@utility bg-auth-grid {
+    background-image:
+        linear-gradient(to right, color-mix(in srgb, var(--chart-2) 7%, transparent) 1px, transparent 1px),
+        linear-gradient(to bottom, color-mix(in srgb, var(--chart-2) 7%, transparent) 1px, transparent 1px);
+    background-size: --spacing(10) --spacing(10);
+}
+
 @theme inline {
     --font-heading: var(--font-sans);
     --font-sans: 'Geist Variable', sans-serif;
