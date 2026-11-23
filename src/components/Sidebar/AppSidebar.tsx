@@ -20,7 +20,7 @@ type AppSidebarProps = {
   perfil?: Perfil
 }
 
-export const AppSidebar = ({ perfil = "aluno" }: AppSidebarProps) => {
+export const AppSidebar = ({ perfil = "admin" }: AppSidebarProps) => {
   const grupos = menuPorPerfil[perfil]
   const { pathname } = useLocation()
 
