@@ -38,6 +38,7 @@
     --color-highlight-foreground: var(--highlight-foreground);
     --color-highlight-text: var(--highlight-text);
     --color-highlight-subtle: var(--highlight-subtle);
+    --color-highlight-hover: color-mix(in oklch, var(--highlight), black 10%);
     --color-accent-foreground: var(--accent-foreground);
     --color-accent: var(--accent);
     --color-muted-foreground: var(--muted-foreground);
