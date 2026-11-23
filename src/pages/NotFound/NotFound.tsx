@@ -1,5 +1,6 @@
 import { Navbar } from "@/components/Navbar/Navbar"
 import { Button } from "@/components/ui/button"
+import Footer from "@/components/ui/footer";
 import { House } from 'lucide-react';
 
 export const NotFound = () => {
@@ -20,6 +21,7 @@ export const NotFound = () => {
                     </Button>
                 </div>
             </div>
+            <Footer/>
         </div>
     )
 }
