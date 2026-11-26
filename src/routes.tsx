@@ -4,6 +4,7 @@ import { NotFound } from './pages/NotFound/NotFound.tsx'
 import { AppLayout } from './layouts/AppLayout.tsx'
 import { Perfis } from './pages/Admin/Perfis/Perfis.tsx'
 import { Login } from './pages/Login/Login.tsx'
+import { TesteExclusaoCurso } from './pages/TesteExclusaoCurso/TesteExclusaoCurso.tsx'
 
 export const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ export const router = createBrowserRouter([
       {
         path: '/admin/perfis',
         element: <Perfis />
+      },
+      {
+        path: '/teste-exclusao-curso',
+        element: <TesteExclusaoCurso />
       },
     ],
   },
