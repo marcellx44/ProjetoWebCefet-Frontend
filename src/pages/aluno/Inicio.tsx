@@ -5,13 +5,15 @@ import { Avatar, AvatarFallback } from '../../components/ui/avatar'
 import { Button } from '../../components/ui/button'
 import { Separator } from '../../components/ui/separator'
 import { SidebarProvider } from '../../components/ui/sidebar'
+import { cursos } from '../../data/cursos'
+import { Link } from 'react-router'
 import './Inicio.css'
 
 //Log do daniel: Isso aqui é apenas placeholder até a gente puxar do backend
-const cursosEmAndamento = [
-  { id: 1, nome: 'NestJS do Zero', progresso: 24, icone: '{api}' },
-  { id: 2, nome: 'React Moderno', progresso: 69, icone: '</>' },
-  { id: 3, nome: 'Curso de como bangar certo no cs', progresso: 67, icone: '🎮' },
+const matriculasAtivas = [
+  { cursoId: 1, progresso: 24 },
+  { cursoId: 2, progresso: 69 },
+  { cursoId: 3, progresso: 67 },
 ]
 
 function Inicio() {
@@ -47,7 +49,7 @@ function Inicio() {
 
             <section className="resumo-cards" aria-label="Resumo do aluno">
               <ResumoCard titulo="Matrículas ativas" valor={2} icone={<GraduationCap />} />
-              <ResumoCard titulo="Cursos concluídos" valor={1} icone={< CircleCheck />} />
+              <ResumoCard titulo="Cursos concluídos" valor={1} icone={<CircleCheck />} />
               <ResumoCard titulo="Certificados" valor={1} icone={<Award />} />
             </section>
 
@@ -59,34 +61,43 @@ function Inicio() {
                 </div>
 
                 <div className="cursos-lista">
-                  {cursosEmAndamento.map((curso) => (
-                    <article className="curso-card" key={curso.id}>
-                      <div className="curso-card__icone" aria-hidden="true">{curso.icone}</div>
-                      <div className="curso-card__detalhes">
-                        <div className="curso-card__titulo-linha">
-                          <h3>{curso.nome}</h3>
-                          <span className="curso-card__status">● ATIVA</span>
-                        </div>
-                        <div className="curso-card__progresso-linha">
-                          <div
-                            className="curso-card__progresso"
-                            role="progressbar"
-                            aria-label={`Progresso em ${curso.nome}`}
-                            aria-valuenow={curso.progresso}
-                            aria-valuemin={0}
-                            aria-valuemax={100}
-                          >
-                            <span style={{ width: `${curso.progresso}%` }} />
+                  {matriculasAtivas.map((matricula) => {
+                    const curso = cursos.find((item) => item.id === matricula.cursoId)
+                    if (!curso) return null
+
+                    return (
+                      <article className="curso-card" key={curso.id}>
+                        <div className="curso-card__icone" aria-hidden="true">{curso.arte}</div>
+                        <div className="curso-card__detalhes">
+                          <div className="curso-card__titulo-linha">
+                            <h3>{curso.nome}</h3>
+                            <span className="curso-card__status">● ATIVA</span>
                           </div>
-                          <span className="curso-card__porcentagem">{curso.progresso}%</span>
+                          <div className="curso-card__progresso-linha">
+                            <div
+                              className="curso-card__progresso"
+                              role="progressbar"
+                              aria-label={`Progresso em ${curso.nome}`}
+                              aria-valuenow={matricula.progresso}
+                              aria-valuemin={0}
+                              aria-valuemax={100}
+                            >
+                              <span style={{ width: `${matricula.progresso}%` }} />
+                            </div>
+                            <span className="curso-card__porcentagem">{matricula.progresso}%</span>
+                          </div>
                         </div>
-                      </div>
-                      <Button size="sm" className="curso-card__botao">
-                        <Play aria-hidden="true" />
-                        Continuar
-                      </Button>
-                    </article>
-                  ))}
+                        <Button
+                          render={<Link to={`/aluno/cursos/${curso.id}`} />}
+                          size="sm"
+                          className="curso-card__botao"
+                        >
+                          <Play aria-hidden="true" />
+                          Continuar
+                        </Button>
+                      </article>
+                    )
+                  })}
                 </div>
               </section>
 

@@ -15,7 +15,7 @@ export type Curso = {
 
 export const cursos: Curso[] = [
   {
-    id: 12,
+    id: 1,
     nome: 'NestJS do Zero',
     categoria: 'Backend',
     nivel: 'Intermediário',
@@ -38,6 +38,17 @@ export const cursos: Curso[] = [
   },
   {
     id: 3,
+    nome: 'Curso de como bangar certo no cs',
+    categoria: 'Games',
+    nivel: 'Intermediário',
+    descricao: 'Fundamentos de estratégia, comunicação e tomada de decisão em equipe.',
+    caminho: '~/games/cs',
+    arte: '🎮',
+    Icone: Terminal,
+    modulos: ['Fundamentos e estratégia', 'Comunicação em equipe'],
+  },
+  {
+    id: 4,
     nome: 'Docker para Devs',
     categoria: 'DevOps',
     nivel: 'Iniciante',
@@ -48,7 +59,7 @@ export const cursos: Curso[] = [
     modulos: ['Containers e imagens', 'Docker Compose'],
   },
   {
-    id: 4,
+    id: 5,
     nome: 'PostgreSQL na Prática',
     categoria: 'Banco de Dados',
     nivel: 'Intermediário',

@@ -13,7 +13,7 @@ import { Separator } from '../../components/ui/separator'
 import { SidebarProvider } from '../../components/ui/sidebar'
 import './Catalogo.css'
 
-const categorias = ['Backend', 'Frontend', 'DevOps', 'Banco de Dados']
+const categorias = ['Backend', 'Frontend', 'DevOps', 'Banco de Dados', 'Games']
 const niveis = ['Iniciante', 'Intermediário', 'Avançado']
 
 function Catalogo() {
