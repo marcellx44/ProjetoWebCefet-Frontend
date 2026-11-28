@@ -73,7 +73,7 @@ export const menuInstrutor = [
                 id: 1,
                 nome: "Painel",
                 icone: LayoutGrid,
-                url: "/instrutor",
+                url: "/instrutor/painel",
             },
             {
                 id: 2,
