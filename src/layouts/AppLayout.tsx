@@ -12,32 +12,20 @@ interface AppLayoutHandle {
 
 export const AppLayout = () => {
   const location = useLocation()
-  const matches = useMatches()
-  const isAuthPage = matches.some((match) =>
-    (match.handle as { layout?: string } | undefined)?.layout === 'auth'
-  )
-  const isInstructorPage = matches.some((match) =>
-    (match.handle as { perfil?: string } | undefined)?.perfil === 'instrutor'
-  )
-  const perfil = isInstructorPage ? 'instrutor' : 'admin'
-  const nome = isInstructorPage ? 'Rafael Lima' : 'Maria Silva'
-  const cargo = isInstructorPage ? 'Instrutor' : 'Admin'
   const handles = useMatches().map((match) => match.handle as AppLayoutHandle | undefined)
   const isAuthPage = handles.some((handle) => handle?.layout === 'auth')
-  const { perfil = 'admin', nome = 'Maria Silva' } = handles.findLast((handle) => handle?.perfil) ?? {}
+  const routeHandle = handles.findLast((handle) => handle?.perfil)
+  const perfil = routeHandle?.perfil ?? 'admin'
+  const nome = routeHandle?.nome ?? (perfil === 'instrutor' ? 'Rafael Lima' : 'Maria Silva')
+  const cargo = perfil === 'admin' ? 'Admin' : nomeDoPerfil[perfil]
 
   if (isAuthPage) return <Outlet />
 
   return (
     <SidebarProvider style={{ "--sidebar-width-icon": "4rem" } as React.CSSProperties}>
-      <AppSidebar perfil={perfil} nome={isInstructorPage ? nome : undefined} />
-      <SidebarInset>
-        <Header rota={location.pathname} nome={nome} cargo={cargo} />
-        <SidebarTrigger/>
-        <div className="flex flex-col gap-6 px-8 pt-7">
-      <AppSidebar perfil={perfil} nome={nome} />
+      <AppSidebar perfil={perfil} nome={perfil === 'instrutor' ? nome : undefined} />
       <SidebarInset className="min-w-0">
-        <Header rota={location.pathname} nome={nome} cargo={perfil === 'admin' ? 'Admin' : nomeDoPerfil[perfil]} />
+        <Header rota={location.pathname} nome={nome} cargo={cargo} />
         {perfil === 'instrutor' ? (
           <div className="px-4 pt-3 md:hidden"><SidebarTrigger aria-label="Abrir menu" /></div>
         ) : <SidebarTrigger />}

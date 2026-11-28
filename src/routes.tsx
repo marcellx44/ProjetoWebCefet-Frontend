@@ -17,6 +17,7 @@ export const router = createBrowserRouter([
         children: [
           { index: true, element: <Navigate to="painel" replace /> },
           { path: 'painel', element: <Painel /> },
+          { path: 'cursos', element: <MeusCursos /> },
         ],
       },
       {
@@ -31,11 +32,6 @@ export const router = createBrowserRouter([
       {
         path: '/admin/perfis',
         element: <Perfis />
-      },
-      {
-        path: '/instrutor/cursos',
-        element: <MeusCursos />,
-        handle: { perfil: 'instrutor' }
       },
     ],
   },
