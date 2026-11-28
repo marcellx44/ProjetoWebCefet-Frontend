@@ -12,6 +12,16 @@ interface AppLayoutHandle {
 
 export const AppLayout = () => {
   const location = useLocation()
+  const matches = useMatches()
+  const isAuthPage = matches.some((match) =>
+    (match.handle as { layout?: string } | undefined)?.layout === 'auth'
+  )
+  const isInstructorPage = matches.some((match) =>
+    (match.handle as { perfil?: string } | undefined)?.perfil === 'instrutor'
+  )
+  const perfil = isInstructorPage ? 'instrutor' : 'admin'
+  const nome = isInstructorPage ? 'Rafael Lima' : 'Maria Silva'
+  const cargo = isInstructorPage ? 'Instrutor' : 'Admin'
   const handles = useMatches().map((match) => match.handle as AppLayoutHandle | undefined)
   const isAuthPage = handles.some((handle) => handle?.layout === 'auth')
   const { perfil = 'admin', nome = 'Maria Silva' } = handles.findLast((handle) => handle?.perfil) ?? {}
@@ -20,6 +30,11 @@ export const AppLayout = () => {
 
   return (
     <SidebarProvider style={{ "--sidebar-width-icon": "4rem" } as React.CSSProperties}>
+      <AppSidebar perfil={perfil} nome={isInstructorPage ? nome : undefined} />
+      <SidebarInset>
+        <Header rota={location.pathname} nome={nome} cargo={cargo} />
+        <SidebarTrigger/>
+        <div className="flex flex-col gap-6 px-8 pt-7">
       <AppSidebar perfil={perfil} nome={nome} />
       <SidebarInset className="min-w-0">
         <Header rota={location.pathname} nome={nome} cargo={perfil === 'admin' ? 'Admin' : nomeDoPerfil[perfil]} />
