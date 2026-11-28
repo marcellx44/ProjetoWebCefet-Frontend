@@ -4,6 +4,7 @@ import { NotFound } from './pages/NotFound/NotFound.tsx'
 import { AppLayout } from './layouts/AppLayout.tsx'
 import { Perfis } from './pages/Admin/Perfis/Perfis.tsx'
 import { Login } from './pages/Login/Login.tsx'
+import { MeusCursos } from './pages/Instrutor/MeusCursos/MeusCursos.tsx'
 
 export const router = createBrowserRouter([
   {
@@ -21,6 +22,11 @@ export const router = createBrowserRouter([
       {
         path: '/admin/perfis',
         element: <Perfis />
+      },
+      {
+        path: '/instrutor/cursos',
+        element: <MeusCursos />,
+        handle: { perfil: 'instrutor' }
       },
     ],
   },

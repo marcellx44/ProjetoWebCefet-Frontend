@@ -18,11 +18,19 @@ import { Link, useLocation } from "react-router"
 
 type AppSidebarProps = {
   perfil?: Perfil
+  nome?: string
 }
 
-export const AppSidebar = ({ perfil = "admin" }: AppSidebarProps) => {
+function obterIniciais(nome: string) {
+  const partes = nome.trim().split(/\s+/)
+  return `${partes[0]?.[0] ?? ''}${partes.length > 1 ? partes.at(-1)?.[0] ?? '' : ''}`.toUpperCase()
+}
+
+export const AppSidebar = ({ perfil = "admin", nome }: AppSidebarProps) => {
   const grupos = menuPorPerfil[perfil]
   const { pathname } = useLocation()
+  const nomeUsuario = nome ?? 'Mock Aluno'
+  const iniciais = nome ? obterIniciais(nome) : 'MK'
 
   return (
     <Sidebar collapsible="icon" className="px-4 py-6 bg-sidebar group-data-[collapsible=icon]:px-2">
@@ -63,11 +71,11 @@ export const AppSidebar = ({ perfil = "admin" }: AppSidebarProps) => {
       <SidebarFooter className="flex-row items-center gap-2.5 border-t border-primary px-2 py-3">
         <Avatar size="lg" className="rounded-lg after:hidden group-data-[collapsible=icon]:size-8!">
           <AvatarFallback className="rounded-lg bg-chart-3 text-label-md text-accent-foreground group-data-[collapsible=icon]:text-label-sm">
-            MK
+            {iniciais}
           </AvatarFallback>
         </Avatar>
         <div className="flex min-w-0 flex-1 flex-col group-data-[collapsible=icon]:hidden">
-          <span className="truncate text-label-md text-sidebar-foreground">Mock Aluno</span>
+          <span className="truncate text-label-md text-sidebar-foreground">{nomeUsuario}</span>
           <span className="truncate text-body-sm text-chart-3">{nomeDoPerfil[perfil]}</span>
         </div>
         <button
