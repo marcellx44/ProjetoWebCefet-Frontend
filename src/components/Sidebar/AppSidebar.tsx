@@ -31,6 +31,11 @@ export const AppSidebar = ({ perfil = "admin", nome }: AppSidebarProps) => {
   const { pathname } = useLocation()
   const nomeUsuario = nome ?? 'Mock Aluno'
   const iniciais = nome ? obterIniciais(nome) : 'MK'
+export const AppSidebar = ({ perfil = "admin", nome = "Mock Aluno" }: AppSidebarProps) => {
+  const grupos = menuPorPerfil[perfil]
+  const { pathname } = useLocation()
+  const partesDoNome = nome.trim().split(/\s+/)
+  const iniciais = ((partesDoNome[0]?.[0] ?? '') + (partesDoNome.length > 1 ? partesDoNome.at(-1)?.[0] ?? '' : '')).toUpperCase()
 
   return (
     <Sidebar collapsible="icon" className="px-4 py-6 bg-sidebar group-data-[collapsible=icon]:px-2">
@@ -76,6 +81,7 @@ export const AppSidebar = ({ perfil = "admin", nome }: AppSidebarProps) => {
         </Avatar>
         <div className="flex min-w-0 flex-1 flex-col group-data-[collapsible=icon]:hidden">
           <span className="truncate text-label-md text-sidebar-foreground">{nomeUsuario}</span>
+          <span className="truncate text-label-md text-sidebar-foreground">{nome}</span>
           <span className="truncate text-body-sm text-chart-3">{nomeDoPerfil[perfil]}</span>
         </div>
         <button
